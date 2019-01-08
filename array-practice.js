@@ -18,9 +18,9 @@ let removePeople = (people, ...names) => {
         for(name of names){
             if(people[i] === name){
                 people.splice(i , 1);
-                return people;
             }
         }
+        return people;
     }        
 } 
 peopleClone = people.slice(0);

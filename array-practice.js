@@ -7,8 +7,9 @@ for(let person of people){
 
 // 2. Write the command to remove "Greg" from the array.
 console.log("2.---------------------");
-let slicePeople = people.slice(1);
-console.log(slicePeople);
+let peopleClone = people.slice(0);
+peopleClone.shift();
+console.log(peopleClone);
 
 // 3. Write the command to remove "James" from the array.
 console.log("3.---------------------");
@@ -22,9 +23,9 @@ let removePeople = (people, ...names) => {
         }
     }        
 } 
-let peopleClone = Object.assign([], people);
-console.log(removePeople(peopleClone, "James"));
-
+peopleClone = people.slice(0);
+peopleClone.pop();
+console.log(peopleClone);
 // 4. Write the command to add "Matt" to the front of the array.
 console.log("4.---------------------");
 peopleClone = Object.assign([], people);
@@ -61,6 +62,14 @@ for(let i = 0 ; i < people.length ; i++){
         Object.assign(peopleClone, peopleClone2, people.slice(beginIdx, i + 1));
     }
 }
+//console.log(peopleClone);
+/* ['Matt', 'Mary', 'Devon', 'James'];
+希望可以透過 slice 的方式取得一份複製的陣列，而該陣列的內容是 ['Devon', 'James']，
+不需要考慮動態陣列的問題，就依目前有的資料處理即可.
+這題的最佳解是一行程式
+*/
+people = ['Matt', 'Mary', 'Devon', 'James'];
+peopleClone = people.slice(2, 4);
 console.log(peopleClone);
 
 
@@ -75,5 +84,5 @@ console.log(people.indexOf("Foo"));
 
 // 10. Redefine the people variable with the value you started with. Using the splice command, remove "Devon" from the array and add "Elizabeth" and "Artie". Your array should look like this when you are done ["Greg", "Mary", "Elizabeth", "Artie", "James"].
 console.log("10.---------------------");
-people.splice(2, 0, "Elizabeth", "Artie");
+people.splice(2, 1, "Elizabeth", "Artie");
 console.log(people);

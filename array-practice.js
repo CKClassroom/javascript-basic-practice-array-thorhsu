@@ -69,7 +69,7 @@ for(let i = 0 ; i < people.length ; i++){
 這題的最佳解是一行程式
 */
 people = ['Matt', 'Mary', 'Devon', 'James'];
-peopleClone = people.slice(2, 4);
+peopleClone = people.slice(2);
 console.log(peopleClone);
 
 

@@ -20,8 +20,8 @@ let removePeople = (people, ...names) => {
                 people.splice(i , 1);
             }
         }
-        return people;
-    }        
+    }
+    return people;        
 } 
 peopleClone = people.slice(0);
 peopleClone.pop();
